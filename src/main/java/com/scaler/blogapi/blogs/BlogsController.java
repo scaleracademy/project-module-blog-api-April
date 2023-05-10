@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "/blogs")
-public class BlogsControllers {
+public class BlogsController {
 
 }
