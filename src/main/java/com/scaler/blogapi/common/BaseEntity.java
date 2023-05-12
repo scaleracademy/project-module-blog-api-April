@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Date;
 import java.util.UUID;
 
@@ -30,4 +32,9 @@ UUID id;
     @Column(nullable = false)
     Date createdAt;
 
+    @PrePersist
+    public void onCreate() {
+        Timestamp timestamp = Timestamp.from(Instant.now());
+        this.createdAt = timestamp;
+    }
 }

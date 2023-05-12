@@ -40,6 +40,7 @@ public class UsersRepositoryTests {
         userRepository.save(userEntity);
 
         var user = userRepository.findByUsername("testuser");
+        System.out.println(user);
         Assertions.assertEquals("testemail@gmail.com", user.getEmail());
     }
 
