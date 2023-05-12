@@ -2,13 +2,21 @@ package com.scaler.blogapi.users;
 
 import com.scaler.blogapi.common.BaseEntity;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.util.Date;
 import java.util.UUID;
-
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 @Entity(name = "users")
 public class UserEntity  extends BaseEntity  {
+
 
     @Column(nullable = false, unique = true, length = 30)
     String username;
@@ -19,7 +27,5 @@ public class UserEntity  extends BaseEntity  {
 
     @Column(length = 100)
     String bio;
-
-
 
 }
